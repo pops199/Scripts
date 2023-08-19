@@ -1,0 +1,15 @@
+[Unit]
+Description=Stemlink Service
+After=getty.target
+Conflicts=getty@tty2.service
+
+[Service]
+Type=steamlink
+RemainAfterExit=yes
+ExecStart=/opt/steamlink.sh
+StandardInput=tty-force
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+WantedBy=graphical.target
